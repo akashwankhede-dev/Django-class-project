@@ -1,11 +1,5 @@
-{% extends 'nav.html' %} 
-
-{% block title %}
-CodeWithAK
-{% endblock title %}
-
-{% block form %} 
-<br>
+{% extends 'base.html' %} 
+{% block content %}
 <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative " data-aos="zoom-in" data-aos-delay="100">
             <h1 style="color: white; text-align: center;">Signup</h1>
@@ -46,9 +40,11 @@ CodeWithAK
                     <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm password" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn- btn-sm btn-block" style="text-align: center; color: white;">Signin</button>
+                <a href="/login/" style="padding: 7px 12px;     position: relative;
+    left: 50%;
+    transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Signup</request></a>
                 <br>
-                <p style="text-align: center; color: white;">Already a user? <a href="/classauth/login" style="color: white;">Login</a></p>
+                <p style="text-align: center; color: white;">Already a user? <a href="/login/" style="color: white;">Login</a></p>
                 <br>
                 <!-- <p style="text-align: center; color: white;"><a href="/" style="color: white;">Home</a></p> -->
             </form>
@@ -56,4 +52,4 @@ CodeWithAK
     </section>
 
 
-{% endblock form %}
+{% endblock content %}

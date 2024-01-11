@@ -1,10 +1,7 @@
-{% extends 'nav.html' %} 
+{% extends 'base.html' %} 
 
-{% block title %}
+{% block content %}
 CodeWithAK Login
-{% endblock title %}
-
-{% block form %} 
 <br>
 <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative " data-aos="zoom-in" data-aos-delay="100">
@@ -29,9 +26,11 @@ CodeWithAK Login
                 </div>
             
                 <br>
-                <button type="submit" class="btn btn- btn-sm btn-block" style="text-align: center;">Login</button>
+      <a href="/login/" style="padding: 7px 12px;     position: relative;
+    left: 50%;
+    transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Login</request></a>
                 <br>
-                <p style="text-align: center; color: white;">Not Already a user? <a href="/classauth/signup/" style="color: white;">Signup</a></p>
+                <p style="text-align: center; color: white;">Not Already a user? <a href="/signup/" style="color: white;">Signup</a></p>
                 <br>
                 <span><p style="text-align: center; color: white;"> Forgot Password?<a href="/">Reset</a></p></span>
                 <br>
@@ -41,4 +40,4 @@ CodeWithAK Login
     </section>
 
 
-{% endblock form %}
+{% endblock content %}

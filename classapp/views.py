@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Courses
 
 # Create your views here.
 
@@ -11,3 +12,11 @@ def login(request):
 
 def signup(request):
     return render(request,"signup.html")
+
+def courses(request):
+
+    courses = Courses.objects.all()
+
+    context = {'cources': courses}
+
+    return render(request, "courses.html", context)

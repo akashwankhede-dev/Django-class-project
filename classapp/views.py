@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+=======
+from django.shortcuts import render
+from .models import Courses
+>>>>>>> 56749186cd8e91ac20084a0abb09409eda43b1db
 
 # Create your views here.
 
@@ -10,6 +15,7 @@ def home(request):
 
 
 def signup(request):
+<<<<<<< HEAD
     if request.method=='GET':
     
         return render(request,'signup.html')
@@ -49,3 +55,14 @@ def login_form(request):
 def logout_page(request):
     logout(request) 
     return redirect("/login/")
+=======
+    return render(request,"signup.html")
+
+def courses(request):
+
+    courses = Courses.objects.all()
+
+    context = {'cources': courses}
+
+    return render(request, "courses.html", context)
+>>>>>>> 56749186cd8e91ac20084a0abb09409eda43b1db

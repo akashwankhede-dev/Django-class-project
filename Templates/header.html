@@ -11,10 +11,10 @@
         <ul>
           <li><a class="active" href="/">Home</a></li>
           <li><a href="/about/">About</a></li>
-          <li><a href="/cources/">Courses</a></li>
+          {% comment %} <li><a href="/cources/">Courses</a></li> {% endcomment %}
           <li><a href="/trainers/">Trainers</a></li>
           {% comment %} <li><a href="events.html">Events</a></li> {% endcomment %}
-          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/pricing/{{user.id}}">Our Courses</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

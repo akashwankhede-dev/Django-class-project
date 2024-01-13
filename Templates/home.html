@@ -209,8 +209,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Courses</h2>
-          <p>Popular Courses</p>
+          {% comment %} <h2>Courses</h2> {% endcomment %}
+          <p>Courses</p>
         </div>
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
@@ -228,7 +228,7 @@
 
                 <h3><a href="course-details.html">{{course.name}}</a></h3>
                 <p>{{course.description}}</p>
-                <a href="/addToCart/" style="padding: 7px 12px;     position: relative;
+                <a href="/buynow/{{course.id}}/{{user.id}}" style="padding: 7px 12px;     position: relative;
     left: 50%;
     transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Buy Now !</request></a>
               </div>

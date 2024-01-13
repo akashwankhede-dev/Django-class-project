@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 <section id="hero" class="d-flex justify-content-center align-items-center">
-        <div class="container position-relative " data-aos="zoom-in" data-aos-delay="100">
+        <div class="container m-5 position-relative " data-aos="zoom-in" data-aos-delay="100">
             <h1 style="color: white; text-align: center;">Signup</h1>
            
             {% for message in messages %}
@@ -12,7 +12,7 @@
               {% endfor %}
 
 
-            <form action="/classauth/signup/" method="post" style="max-width: 400px; margin: 0 auto;">
+            <form action="/signup/" method="post" style="max-width: 400px; margin: 0 auto;">
                {% csrf_token %}
                 <br>
                 <label for="username" style="color: white;"></label>
@@ -21,11 +21,11 @@
                 </div>
                 <label for="fname" style="color: white;"></label>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" required>
+                    <input type="text" class="form-control" id="fname" name="first_name" placeholder="Enter First Name" required>
                 </div>
                 <label for="lname" style="color: white;"></label>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" required>
+                    <input type="text" class="form-control" id="lname" name="last_name" placeholder="Enter Last Name" required>
                 </div>
                 <label for="email" style="color: white;"></label>
                 <div class="form-group">
@@ -33,16 +33,13 @@
                 </div>
                 <label for="pass1" style="color: white;"></label>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Password" required>
+                    <input type="password" class="form-control" id="pass1" name="password" placeholder="Password" required>
                 </div>
-                <label for="pass2" style="color: white;"></label>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm password" required>
-                </div>
+               
                 <br>
-                <a href="/login/" style="padding: 7px 12px;     position: relative;
+              <button class="get-started-btn" style="padding: 7px 12px;     position: relative;
     left: 50%;
-    transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Signup</request></a>
+    transform: translateX(-50%); margin-left: 0px; border:none;" type="submit">Signup</button>
                 <br>
                 <p style="text-align: center; color: white;">Already a user? <a href="/login/" style="color: white;">Login</a></p>
                 <br>
@@ -50,6 +47,8 @@
             </form>
         </div>
     </section>
+
+
 
 
 {% endblock content %}

@@ -32,7 +32,7 @@
             {% endif %}
 =======
       {% if user.is_authenticated %}
-        <a href="courses.html" style="padding: 7px 12px;" class="get-started-btn">Logout {{ user.username }}</request></a>
+        <a href="/logout/" style="padding: 7px 12px;" class="get-started-btn">Logout {{ user.username }}</request></a>
       {% else %}
         <a href="/login/" style="padding: 7px 12px;" class="get-started-btn">Login {{ user.username }}</request></a>
       {% endif %}

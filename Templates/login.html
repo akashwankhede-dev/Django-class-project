@@ -1,7 +1,6 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-CodeWithAK Login
 <br>
 <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative " data-aos="zoom-in" data-aos-delay="100">
@@ -12,7 +11,7 @@ CodeWithAK Login
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               {% endfor %}
-            <form action="/classauth/login/" method="post" style="max-width: 400px; margin: 0 auto;">
+            <form method="POST" style="max-width: 400px; margin: 0 auto;">
                 {% csrf_token %}
                 <br>
                
@@ -26,9 +25,12 @@ CodeWithAK Login
                 </div>
             
                 <br>
-      <a href="/login/" style="padding: 7px 12px;     position: relative;
+      {% comment %} <a href="/login/" style="padding: 7px 12px;     position: relative;
     left: 50%;
-    transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Login</request></a>
+    transform: translateX(-50%); margin-left: 0px;" class="get-started-btn">Login</request></a> {% endcomment %}
+                    <button class="get-started-btn" style="padding: 7px 12px;     position: relative;
+    left: 50%;
+    transform: translateX(-50%); margin-left: 0px; border:none;" type="submit">Login</button>
                 <br>
                 <p style="text-align: center; color: white;">Not Already a user? <a href="/signup/" style="color: white;">Signup</a></p>
                 <br>

@@ -12,6 +12,10 @@ urlpatterns = [
     path('pricing/',TemplateView.as_view(template_name="pricing.html")),
     path('contact/',TemplateView.as_view(template_name="contact.html")),
     path('login/',views.login_form),
+# <<<<<<< HEAD
+#     path('logout/',views.logout_page),
+# =======
+# >>>>>>> main
     path('signup/',views.signup),
      path('logout/', views.logout_page, name='logout'),
 ]

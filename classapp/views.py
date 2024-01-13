@@ -1,23 +1,22 @@
-<<<<<<< HEAD
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-=======
 from django.shortcuts import render
 from .models import Courses
->>>>>>> 56749186cd8e91ac20084a0abb09409eda43b1db
+from django.contrib import messages
+
 
 # Create your views here.
 
 def home(request):
-    return render(request,'home.html')
+    courses = Courses.objects.all()
+    context = {'courses': courses}
+    return render(request,'home.html', context)
 
 
 def signup(request):
-<<<<<<< HEAD
     if request.method=='GET':
-    
         return render(request,'signup.html')
     
     elif request.method == 'POST':
@@ -55,14 +54,52 @@ def login_form(request):
 def logout_page(request):
     logout(request) 
     return redirect("/login/")
-=======
-    return render(request,"signup.html")
 
 def courses(request):
 
     courses = Courses.objects.all()
 
-    context = {'cources': courses}
+    context = {'courses': courses}
 
     return render(request, "courses.html", context)
->>>>>>> 56749186cd8e91ac20084a0abb09409eda43b1db
+
+def signup(request):
+    if request.method=='GET':
+        return render(request,'signup.html')
+    
+    elif request.method == 'POST':
+        
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        
+        u = User.objects.create(first_name= first_name,last_name= last_name ,username= username ,email= email)
+        u.set_password(password)
+        u.save()
+        messages.success(request,'Registration SuccessFully..!')
+        return redirect('/login')
+    
+    
+def login_form(request):
+    if request.method == 'GET':
+        
+        return render(request,'login.html')
+    else:
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        u = authenticate(username = username ,password = password)
+        
+        if u is not None:
+            login(request,u)
+            return redirect('/')
+        else:
+            messages.success(request,'Enter valid detail..!')
+            return redirect("/login/")
+
+def logout_page(request):
+    logout(request) 
+    return redirect("/login/")
+

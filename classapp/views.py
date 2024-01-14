@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+from django.shortcuts import render, redirect
+from .models import Courses, MyCourse
+=======
 from django.shortcuts import render,redirect
+>>>>>>> 5acbfb3be98b725c31230a270cb4e497756bb413
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -79,7 +84,7 @@ def signup(request):
         u.set_password(password)
         u.save()
         messages.success(request,'Registration SuccessFully..!')
-        return redirect('/login')
+        return redirect('/login/')
     
     
 def login_form(request):
@@ -102,4 +107,25 @@ def login_form(request):
 def logout_page(request):
     logout(request) 
     return redirect("/login/")
+<<<<<<< HEAD
+    # return render(request,"signup.html")
 
+def buy_course(request, cid, uid):
+    user = User.objects.get(id = uid)
+    course = Courses.objects.get(id = cid)
+
+    addCourse = MyCourse(user = user, course = course)
+    addCourse.save()
+    messages.success(request,'User added successfully !')
+    return redirect('/')
+
+
+def our_courses(request, uid):
+    my_course = MyCourse.objects.filter(user = uid)
+
+    context = {'courses': my_course}
+
+    return render(request, "pricing.html", context)
+=======
+
+>>>>>>> 5acbfb3be98b725c31230a270cb4e497756bb413

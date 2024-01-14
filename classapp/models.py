@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 
@@ -11,3 +14,8 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.name
+
+class MyCourse(models.Model):
+    course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    

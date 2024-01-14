@@ -3,6 +3,7 @@ from django.urls import path
 from classapp import views
 from django.views.generic import TemplateView
 
+
 urlpatterns = [
     path('',views.home,name='home'),
     path('about/',TemplateView.as_view(template_name="about.html")),
@@ -11,7 +12,14 @@ urlpatterns = [
     path('pricing/<int:uid>',views.our_courses),
     path('contact/',TemplateView.as_view(template_name="contact.html")),
     path('login/',views.login_form),
-    path('logout/',views.logout_page),
+# <<<<<<< HEAD
+#     path('logout/',views.logout_page),
+# =======
+# >>>>>>> main
     path('signup/',views.signup),
+<<<<<<< HEAD
     path('buynow/<int:cid>/<int:uid>',views.buy_course),
+=======
+     path('logout/', views.logout_page, name='logout'),
+>>>>>>> 5acbfb3be98b725c31230a270cb4e497756bb413
 ]

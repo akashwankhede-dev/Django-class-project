@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect
 from .models import Courses, MyCourse
-=======
 from django.shortcuts import render,redirect
->>>>>>> 5acbfb3be98b725c31230a270cb4e497756bb413
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -107,8 +103,6 @@ def login_form(request):
 def logout_page(request):
     logout(request) 
     return redirect("/login/")
-<<<<<<< HEAD
-    # return render(request,"signup.html")
 
 def buy_course(request, cid, uid):
     user = User.objects.get(id = uid)
@@ -126,6 +120,3 @@ def our_courses(request, uid):
     context = {'courses': my_course}
 
     return render(request, "pricing.html", context)
-=======
-
->>>>>>> 5acbfb3be98b725c31230a270cb4e497756bb413
